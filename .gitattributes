@@ -1,0 +1,122 @@
+# ==============================================================================
+# DailySpur - .gitattributes Optimized for Flutter (Dart) + .NET 10 (C#)
+# - Normalizes line endings to LF in repo (overrides core.autocrlf=true)
+# - Marks binaries, sets merge drivers for VS/Xcode generated files
+# ==============================================================================
+
+# Auto-detect text files, normalize to LF on commit (binaries override below)
+* text=auto
+
+# ------------------------------------------------------------------------------
+# C# / .NET 10
+# ------------------------------------------------------------------------------
+*.cs text eol=lf diff=csharp
+*.csx text eol=lf diff=csharp
+*.csproj text eol=lf merge=union
+*.sln text eol=lf merge=union
+*.slnx text eol=lf merge=union
+*.props text eol=lf
+*.targets text eol=lf
+*.config text eol=lf
+*.resx text eol=lf
+*.xaml text eol=lf
+*.razor text eol=lf
+
+# ------------------------------------------------------------------------------
+# Flutter / Dart
+# ------------------------------------------------------------------------------
+*.dart text eol=lf diff=dart
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.kts text eol=lf
+*.kt text eol=lf
+*.gradle text eol=lf
+*.swift text eol=lf
+*.h text eol=lf
+*.m text eol=lf
+*.mm text eol=lf
+*.plist text eol=lf
+*.pbxproj text eol=lf merge=union
+*.xcconfig text eol=lf
+*.storyboard text eol=lf
+*.xcscheme text eol=lf
+*.entitlements text eol=lf
+
+# Shell scripts always LF
+*.sh text eol=lf
+
+# ------------------------------------------------------------------------------
+# Windows scripts - CRLF
+# ------------------------------------------------------------------------------
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ------------------------------------------------------------------------------
+# Binaries - do not normalize, no diff
+# ------------------------------------------------------------------------------
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.bmp binary
+*.tiff binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.7z binary
+*.a binary
+*.so binary
+*.dylib binary
+*.dll binary
+*.exe binary
+*.pdb binary
+*.nupkg binary
+*.snupkg binary
+*.aab binary
+*.apk binary
+*.ipa binary
+*.keystore binary
+*.jks binary
+*.pfx binary
+*.der binary
+*.cer binary
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+
+# Xcode / CocoaPods
+*.xcworkspace binary
+*.xcuserdata binary
+
+# ------------------------------------------------------------------------------
+# GitHub Linguist & diff suppression for generated files
+# ------------------------------------------------------------------------------
+# Flutter generated - mark as generated, keep in repo but hide in diff
+**/ios/Flutter/Generated.xcconfig linguist-generated=true
+**/ios/Flutter/flutter_export_environment.sh linguist-generated=true
+**/lib/generated/** linguist-generated=true
+**/*.g.dart linguist-generated=true
+**/*.freezed.dart linguist-generated=true
+**/*.gr.dart linguist-generated=true
+
+# .NET generated
+**/obj/** linguist-generated=true
+**/bin/** linguist-generated=true
+*.designer.cs linguist-generated=true
+*.g.cs linguist-generated=true
+
+# Lock files - keep as text for diff
+*.lock text
+pubspec.lock text
+package-lock.json text
+yarn.lock text

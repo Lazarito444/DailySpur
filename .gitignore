@@ -1,0 +1,207 @@
+# ==============================================================================
+# DailySpur - Unified .gitignore for Flutter + .NET 10 (Monorepo: src/)
+# Optimized for: Flutter 3.13+ (Dart) + ASP.NET Core net10.0
+# Decisions: keep pubspec.lock, ignore .vscode fully, ignore appsettings.*.json
+# Rely on root — no nested .gitignores needed
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# OS
+# ------------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ------------------------------------------------------------------------------
+# IDE & Editors
+# ------------------------------------------------------------------------------
+
+# Visual Studio
+.vs/
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+
+# Visual Studio Code - fully ignored per user choice
+.vscode/
+
+# JetBrains Rider / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+*.iws
+
+# Vim / Emacs / Other
+*.swp
+*.swo
+*~
+.history
+.atom/
+.buildlog/
+.svn/
+.swiftpm/
+migrate_working_dir/
+.tags*
+*.mode1v3
+*.mode2v3
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+*.xcuserstate
+.cxx/
+
+# ------------------------------------------------------------------------------
+# .NET 10 / MSBuild / ASP.NET Core
+# ------------------------------------------------------------------------------
+# Build outputs - any depth (monorepo safe)
+**/bin/
+**/obj/
+**/out/
+**/publish/
+**/artifacts/
+# Top-level artifact folders
+artifacts/
+publish/
+out/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+
+# Test & Coverage
+**/TestResults/
+**/coverage*/
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+BenchmarkDotNet.Artifacts/
+
+# User-specific & secrets - keep appsettings.json, ignore env variants
+**/appsettings.*.json
+!**/appsettings.json
+secrets.json
+appsettings.local.json
+*.pfx
+*.keystore
+*.jks
+
+# Tool manifests & local configs (keep global tools, ignore local overrides)
+# .config/dotnet-tools.json is kept - uncomment next line if you want to ignore local overrides
+# .config/dotnet-tools.local.json
+
+# ------------------------------------------------------------------------------
+# Flutter / Dart / Pub
+# ------------------------------------------------------------------------------
+# Flutter SDK artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+.flutter_version
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/coverage/
+app.*.symbols
+app.*.map.json
+.widget_preview/
+
+# Build outputs - any depth + root
+**/build/
+build/
+# Explicit pubspec.lock is KEPT (app, not package) - do not ignore
+# If this were a pure Dart package, uncomment:
+# pubspec.lock
+
+# Miscellaneous from Flutter template
+*.class
+*.log
+*.pyc
+.migrate_working_dir/
+
+# ------------------------------------------------------------------------------
+# Android (Flutter)
+# ------------------------------------------------------------------------------
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+**/android/.gradle
+**/android/captures/
+**/android/gradle-wrapper.jar
+**/android/local.properties
+**/android/key.properties
+# Signing - never commit
+**/*.keystore
+**/*.jks
+
+# ------------------------------------------------------------------------------
+# iOS / macOS (Flutter)
+# ------------------------------------------------------------------------------
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/DerivedData/
+**/Pods/
+**/.symlinks/
+xcuserdata/
+**/.generated/
+Flutter/App.framework
+Flutter/Flutter.framework
+Flutter/Flutter.podspec
+Flutter/Flutter.DSYM.zip
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS Flutter ephemeral
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/Flutter/ephemeral/
+
+# ------------------------------------------------------------------------------
+# Web / Misc
+# ------------------------------------------------------------------------------
+# Env files - keep example
+.env
+.env.*
+!.env.example
+.env.local
+
+# Logs & temp
+*.tmp
+*.temp
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Misc tooling (added when needed)
+# fastlane
+# **/fastlane/report.xml
+# **/fastlane/Preview.html
+# **/fastlane/screenshots
+# **/fastlane/test_output
+# firebase
+# lib/firebase_options.dart
