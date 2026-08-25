@@ -1,0 +1,22 @@
+name: dailyspur
+description: "Daily Knowledge Prompt & Quiz: Delivers one customized question or fact a day in a subject area you want to stay sharp on."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.1
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
